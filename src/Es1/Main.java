@@ -25,13 +25,14 @@ public class Main {
             String nuovaParola = input.nextLine();
 
 
-            if (!paroleUnicheChecker.add(nuovaParola)) {
-                paroleDuplicate.add(nuovaParola);
+            if (i == numeroParole - 1) {
+                System.out.println("Ecco i tuoi array di parole");
             } else {
-                paroleUniche.add(nuovaParola);
-                if (i == numeroParole - 1) {
-                    System.out.println("Ecco il tuo array di parole");
+                if (!paroleUnicheChecker.add(nuovaParola)) {
+                    paroleDuplicate.add(nuovaParola);
+                    System.out.println("Inserisci un'altra parola");
                 } else {
+                    paroleUniche.add(nuovaParola);
                     System.out.println("Inserisci un'altra parola");
                 }
             }
@@ -43,7 +44,7 @@ public class Main {
             System.out.println("Le parole uniche sono: " + paroleUniche.size() + " e sono " + paroleUniche);
         }
 
-        System.out.println("Le parole uniche sono: " + paroleDuplicate.size() + " e sono " + paroleDuplicate);
+        System.out.println("Le parole duplicate sono: " + paroleDuplicate.size() + " e sono " + paroleDuplicate);
 
 
         input.close();
