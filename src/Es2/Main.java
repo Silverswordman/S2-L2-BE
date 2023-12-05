@@ -1,6 +1,7 @@
 package Es2;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -17,7 +18,11 @@ public class Main {
 
                 ArrayList<Integer> numeriCasuali = generaNumeriCasuali(numeroElementi);
 
-                System.out.println("Numeri casuali generati: " + numeriCasuali);
+                Collections.sort(numeriCasuali);
+
+                System.out.println("Numeri casuali generati (ordine crescente): " + numeriCasuali);
+
+                stampaInversa(numeriCasuali);
 
                 break;
             } catch (NumberFormatException e) {
@@ -25,7 +30,8 @@ public class Main {
             }
         } while (true);
 
-// prima non mi chiudeva ora si bah
+        //scanner che fa come gli pare
+
         input.close();
     }
 
@@ -37,5 +43,15 @@ public class Main {
             numeriCasuali.add(numeroCasuale);
         }
         return numeriCasuali;
+    }
+
+    private static void stampaInversa(ArrayList<Integer> lista) {
+        // Copia l'ArrayList in modo che la lista originale non venga modificata
+        ArrayList<Integer> copiaLista = new ArrayList<>(lista);
+
+        // Inverti l'ArrayList
+        Collections.reverse(copiaLista);
+
+        System.out.println("Numeri casuali generati (ordine inverso): " + copiaLista);
     }
 }
