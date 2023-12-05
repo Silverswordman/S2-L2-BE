@@ -1,6 +1,10 @@
 
 0
 java:S1220""Move this file to a named package.
+W
+java:S1118":Add a private constructor to hide the implicit public one.(àªÅö8‰††ÕÃ1
+M
+java:S1172"+Remove this unused method parameter "args".(üÎÆıÿÿÿÿ8‹††ÕÃ1
 @
 java:S3457"%String contains no format specifiers.(Šª„ıÿÿÿÿ
 E	java:S106"+Replace this use of System.out by a logger.(Šª„ıÿÿÿÿ
